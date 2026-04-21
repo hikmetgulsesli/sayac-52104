@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Kinetic Counter - Empty History</title>
+<!-- Google Fonts: Space Grotesk & Inter -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Space+Grotesk:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Theme Configuration -->
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-tertiary": "#ffffff",
+                    "on-tertiary-container": "#fffbff",
+                    "secondary-fixed-dim": "#d0bcff",
+                    "error-container": "#ffdad6",
+                    "on-secondary-container": "#fffbff",
+                    "primary-fixed": "#e1e0ff",
+                    "tertiary": "#904900",
+                    "tertiary-container": "#b55d00",
+                    "on-secondary-fixed-variant": "#5516be",
+                    "tertiary-fixed-dim": "#ffb783",
+                    "secondary-container": "#8455ef",
+                    "surface-tint": "#494bd6",
+                    "on-primary-fixed": "#07006c",
+                    "inverse-on-surface": "#ecf1ff",
+                    "surface-container-lowest": "#ffffff",
+                    "primary-container": "#6063ee",
+                    "on-primary": "#ffffff",
+                    "surface-variant": "#d8e3fb",
+                    "on-primary-container": "#fffbff",
+                    "inverse-primary": "#c0c1ff",
+                    "on-surface-variant": "#464554",
+                    "surface-container-high": "#dee8ff",
+                    "primary-fixed-dim": "#c0c1ff",
+                    "on-background": "#111c2d",
+                    "tertiary-fixed": "#ffdcc5",
+                    "surface-container-low": "#f0f3ff",
+                    "surface-bright": "#f9f9ff",
+                    "on-error-container": "#93000a",
+                    "secondary": "#6b38d4",
+                    "on-primary-fixed-variant": "#2f2ebe",
+                    "on-secondary-fixed": "#23005c",
+                    "on-error": "#ffffff",
+                    "background": "#f9f9ff",
+                    "on-surface": "#111c2d",
+                    "on-secondary": "#ffffff",
+                    "surface-dim": "#cfdaf2",
+                    "inverse-surface": "#263143",
+                    "surface-container-highest": "#d8e3fb",
+                    "outline-variant": "#c7c4d7",
+                    "error": "#ba1a1a",
+                    "outline": "#767586",
+                    "primary": "#4648d4",
+                    "on-tertiary-fixed-variant": "#703700",
+                    "surface": "#f9f9ff",
+                    "secondary-fixed": "#e9ddff",
+                    "surface-container": "#e7eeff",
+                    "on-tertiary-fixed": "#301400"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {},
+            "fontFamily": {
+                    "headline": [
+                            "Space Grotesk"
+                    ],
+                    "body": [
+                            "Inter"
+                    ],
+                    "label": [
+                            "Inter"
+                    ]
+            }
+    },
+        },
+      }
+    </script>
+<style>
+        /* Hide scrollbar for cleaner UI */
+        ::-webkit-scrollbar {
+            width: 0px;
+            background: transparent;
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body overflow-hidden h-screen flex w-full">
+<!-- JSON Component: SideNavBar -->
+<nav class="bg-slate-50 dark:bg-slate-950 text-indigo-600 dark:text-indigo-400 font-['Inter'] font-medium text-sm text-xl font-bold font-['Space_Grotesk'] text-indigo-600 h-screen w-64 hidden lg:flex flex-col border-r-0 tonal-layering bg-surface-container-lowest flat no-shadows flex flex-col gap-2 p-4 h-full shrink-0">
+<div class="px-4 py-6 mb-4">
+<h1 class="text-xl font-bold font-['Space_Grotesk'] text-indigo-600">Playground</h1>
+<p class="text-xs font-['Inter'] text-slate-500 mt-1">Kinetic v1.0</p>
+</div>
+<div class="flex flex-col gap-2 flex-1">
+<!-- Active Tab: Counter -->
+<button class="bg-indigo-50 dark:bg-indigo-900/30 text-indigo-700 dark:text-indigo-300 rounded-xl px-4 py-3 font-semibold hover:bg-slate-100 dark:hover:bg-slate-900 rounded-xl transition-colors hover:translate-x-1 transition-transform duration-200 flex items-center gap-3 text-left w-full">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">add_circle</span>
+<span>Counter</span>
+</button>
+<!-- Inactive Tab: History -->
+<button class="text-slate-500 dark:text-slate-400 px-4 py-3 hover:bg-slate-100 dark:hover:bg-slate-900 rounded-xl transition-colors hover:translate-x-1 transition-transform duration-200 flex items-center gap-3 text-left w-full">
+<span class="material-symbols-outlined" data-icon="history">history</span>
+<span>History</span>
+</button>
+<!-- Inactive Tab: Settings -->
+<button class="text-slate-500 dark:text-slate-400 px-4 py-3 hover:bg-slate-100 dark:hover:bg-slate-900 rounded-xl transition-colors hover:translate-x-1 transition-transform duration-200 flex items-center gap-3 text-left w-full">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span>Settings</span>
+</button>
+</div>
+<button class="mt-auto flex items-center justify-center gap-2 bg-indigo-600 text-white rounded-xl px-4 py-3 font-semibold hover:opacity-90 transition-opacity">
+<span class="material-symbols-outlined">add</span>
+            New Counter
+        </button>
+</nav>
+<!-- Main Content Area -->
+<main class="flex-1 flex flex-col h-screen overflow-y-auto relative w-full">
+<!-- JSON Component: TopAppBar -->
+<header class="bg-surface/80 dark:bg-slate-900/80 backdrop-blur-xl text-indigo-600 dark:text-indigo-400 font-['Space_Grotesk'] font-bold tracking-tight text-2xl font-bold font-['Space_Grotesk'] text-indigo-600 dark:text-indigo-400 docked full-width top-0 sticky z-50 no-border tonal-shift bg-surface-container-low/50 shadow-sm dark:shadow-none flex justify-between items-center w-full px-6 py-4 max-w-7xl mx-auto">
+<div class="flex items-center gap-3">
+<span>Kinetic Counter</span>
+</div>
+<div class="flex items-center">
+<button class="hover:opacity-80 transition-opacity active:scale-95 transition-transform duration-200 w-10 h-10 flex items-center justify-center rounded-full bg-surface-container-low text-indigo-600">
+<span class="material-symbols-outlined" data-icon="light_mode">light_mode</span>
+</button>
+</div>
+</header>
+<!-- The Canvas (Kinetic Playground) -->
+<div class="w-full max-w-5xl mx-auto px-6 py-12 flex flex-col gap-20 pb-40 lg:pb-24">
+<!-- Hero Counter Section -->
+<section class="flex flex-col items-center justify-center gap-8 mt-8">
+<div class="flex flex-col items-center">
+<span class="font-body text-surface-tint font-medium text-sm tracking-widest uppercase mb-2">Current Value</span>
+<!-- Massive typographic scale, tabular numbers -->
+<h2 class="font-headline text-[140px] md:text-[180px] leading-none font-bold text-primary tracking-tighter tabular-nums drop-shadow-sm">0</h2>
+</div>
+<!-- The "Action Hero" Button -->
+<button class="w-28 h-28 md:w-32 md:h-32 rounded-full bg-gradient-to-br from-primary to-primary-container text-on-primary flex items-center justify-center shadow-[0_12px_32px_rgba(70,72,212,0.3)] active:scale-95 transition-all duration-300 group outline-none">
+<span class="material-symbols-outlined text-5xl group-active:scale-90 transition-transform duration-300">add</span>
+</button>
+</section>
+<!-- History Panel (Empty State) -->
+<section class="flex flex-col gap-6 w-full max-w-3xl mx-auto">
+<h3 class="font-headline text-2xl font-bold text-on-surface">Recent Activity</h3>
+<!-- Tonal Layering: surface-container-lowest on surface -->
+<div class="bg-surface-container-lowest rounded-3xl p-16 flex flex-col items-center justify-center text-center relative overflow-hidden shadow-[0_4px_40px_rgba(0,0,0,0.03)] border border-outline-variant/15">
+<!-- Atmospheric depth background -->
+<div class="absolute inset-0 bg-gradient-to-br from-surface-container-low/40 to-transparent pointer-events-none"></div>
+<!-- Empty state illustration icon -->
+<div class="w-24 h-24 rounded-full bg-surface flex items-center justify-center mb-6 z-10 shadow-inner">
+<span class="material-symbols-outlined text-5xl text-outline" style="font-variation-settings: 'wght' 200;">history_toggle_off</span>
+</div>
+<h4 class="font-headline text-xl text-on-surface font-semibold z-10 mb-2">Henüz işlem yapılmadı</h4>
+<p class="font-body text-on-surface-variant max-w-sm z-10 text-base leading-relaxed">
+                        There are no recorded increments in this session. Tap the large button above to begin counting.
+                    </p>
+</div>
+</section>
+</div>
+</main>
+<!-- JSON Component: BottomNavBar -->
+<nav class="bg-white/90 dark:bg-slate-900/90 backdrop-blur-lg text-indigo-600 dark:text-indigo-400 font-['Inter'] text-[10px] font-medium hidden fixed bottom-0 w-full rounded-t-3xl lg:hidden no-border shadow-[0_-4px_20px_rgba(0,0,0,0.05)] shadow-2xl fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pt-3 pb-8">
+<!-- Active Item: Counter -->
+<button class="flex flex-col items-center justify-center bg-indigo-100 dark:bg-indigo-900/50 text-indigo-700 dark:text-indigo-200 rounded-2xl px-6 py-2 active:bg-slate-100 dark:active:bg-slate-800 active:scale-90 transition-transform duration-150 gap-1">
+<span class="material-symbols-outlined text-2xl" style="font-variation-settings: 'FILL' 1;">add_circle</span>
+<span class="font-medium">Counter</span>
+</button>
+<!-- Inactive Item: History -->
+<button class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 px-6 py-2 active:bg-slate-100 dark:active:bg-slate-800 active:scale-90 transition-transform duration-150 gap-1">
+<span class="material-symbols-outlined text-2xl" data-icon="history">history</span>
+<span class="font-medium">History</span>
+</button>
+<!-- Inactive Item: Settings -->
+<button class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 px-6 py-2 active:bg-slate-100 dark:active:bg-slate-800 active:scale-90 transition-transform duration-150 gap-1">
+<span class="material-symbols-outlined text-2xl" data-icon="settings">settings</span>
+<span class="font-medium">Settings</span>
+</button>
+</nav>
+</body></html>

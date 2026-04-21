@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+
+<html lang="tr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Sayaç-52104</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-tertiary": "#ffffff",
+                        "on-tertiary-container": "#fffbff",
+                        "secondary-fixed-dim": "#d0bcff",
+                        "error-container": "#ffdad6",
+                        "on-secondary-container": "#fffbff",
+                        "primary-fixed": "#e1e0ff",
+                        "tertiary": "#904900",
+                        "tertiary-container": "#b55d00",
+                        "on-secondary-fixed-variant": "#5516be",
+                        "tertiary-fixed-dim": "#ffb783",
+                        "secondary-container": "#8455ef",
+                        "surface-tint": "#494bd6",
+                        "on-primary-fixed": "#07006c",
+                        "inverse-on-surface": "#ecf1ff",
+                        "surface-container-lowest": "#ffffff",
+                        "primary-container": "#6063ee",
+                        "on-primary": "#ffffff",
+                        "surface-variant": "#d8e3fb",
+                        "on-primary-container": "#fffbff",
+                        "inverse-primary": "#c0c1ff",
+                        "on-surface-variant": "#464554",
+                        "surface-container-high": "#dee8ff",
+                        "primary-fixed-dim": "#c0c1ff",
+                        "on-background": "#111c2d",
+                        "tertiary-fixed": "#ffdcc5",
+                        "surface-container-low": "#f0f3ff",
+                        "surface-bright": "#f9f9ff",
+                        "on-error-container": "#93000a",
+                        "secondary": "#6b38d4",
+                        "on-primary-fixed-variant": "#2f2ebe",
+                        "on-secondary-fixed": "#23005c",
+                        "on-error": "#ffffff",
+                        "background": "#f9f9ff",
+                        "on-surface": "#111c2d",
+                        "on-secondary": "#ffffff",
+                        "surface-dim": "#cfdaf2",
+                        "inverse-surface": "#263143",
+                        "surface-container-highest": "#d8e3fb",
+                        "outline-variant": "#c7c4d7",
+                        "error": "#ba1a1a",
+                        "outline": "#767586",
+                        "primary": "#4648d4",
+                        "on-tertiary-fixed-variant": "#703700",
+                        "surface": "#f9f9ff",
+                        "secondary-fixed": "#e9ddff",
+                        "surface-container": "#e7eeff",
+                        "on-tertiary-fixed": "#301400"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Space Grotesk", "sans-serif"],
+                        "body": ["Inter", "sans-serif"],
+                        "label": ["Inter", "sans-serif"]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        /* Kinetic Typography for numerical values */
+        .tnum {
+            font-variant-numeric: tabular-nums;
+        }
+        body {
+            background-color: theme('colors.surface');
+            color: theme('colors.on-surface');
+        }
+    </style>
+</head>
+<body class="font-body min-h-screen flex flex-col md:flex-row overflow-x-hidden">
+<!-- SideNavBar (Desktop) -->
+<nav class="h-screen w-64 hidden lg:flex flex-col border-r-0 tonal-layering bg-surface-container-lowest flat no-shadows flex-col gap-2 p-4 fixed left-0 top-0 z-40">
+<div class="mb-8 mt-4 px-4">
+<h1 class="text-xl font-bold font-['Space_Grotesk'] text-indigo-600">Playground</h1>
+<p class="text-xs text-slate-500 font-['Inter']">Kinetic v1.0</p>
+</div>
+<div class="flex-1 space-y-2">
+<a class="flex items-center gap-3 bg-indigo-50 text-indigo-700 rounded-xl px-4 py-3 font-semibold hover:opacity-80 transition-opacity" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">add_circle</span>
+<span>Counter</span>
+</a>
+<a class="flex items-center gap-3 text-slate-500 px-4 py-3 hover:bg-slate-100 rounded-xl transition-colors" href="#">
+<span class="material-symbols-outlined">history</span>
+<span>History</span>
+</a>
+<a class="flex items-center gap-3 text-slate-500 px-4 py-3 hover:bg-slate-100 rounded-xl transition-colors" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span>Settings</span>
+</a>
+</div>
+<div class="mt-auto">
+<button class="w-full bg-primary text-on-primary rounded-xl py-3 font-medium hover:opacity-90 transition-opacity flex items-center justify-center gap-2">
+<span class="material-symbols-outlined">add</span>
+                New Counter
+            </button>
+</div>
+</nav>
+<!-- Main Content Area -->
+<main class="flex-1 flex flex-col min-h-screen lg:ml-64 relative">
+<!-- TopAppBar -->
+<header class="docked full-width top-0 sticky z-50 bg-surface/80 backdrop-blur-xl no-border tonal-shift bg-surface-container-low/50 shadow-sm flex justify-between items-center w-full px-6 py-4 max-w-7xl mx-auto">
+<div class="text-2xl font-bold font-['Space_Grotesk'] text-indigo-600 lg:hidden">Kinetic Counter</div>
+<div class="hidden lg:block text-xl font-['Space_Grotesk'] font-bold text-on-surface">Sayaç-52104</div>
+<div class="flex items-center gap-4">
+<button class="p-2 text-slate-500 hover:opacity-80 transition-opacity rounded-full hover:bg-surface-container-high">
+<span class="material-symbols-outlined">light_mode</span>
+</button>
+</div>
+</header>
+<!-- Kinetic Playground Canvas -->
+<div class="flex-1 p-6 md:p-12 max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+<!-- Counter Section (Asymmetric Left) -->
+<section class="lg:col-span-7 flex flex-col items-center lg:items-start justify-center min-h-[512px] lg:min-h-[716px]">
+<div class="text-center lg:text-left mb-16 relative">
+<div class="text-sm font-label font-medium text-on-surface-variant mb-4 tracking-wider uppercase">Current Value</div>
+<!-- Massive Kinetic Number -->
+<div class="font-headline font-bold text-[96px] leading-none text-on-surface tracking-tighter tnum relative inline-block">
+<span class="bg-clip-text text-transparent bg-gradient-to-br from-primary to-primary-container">13</span>
+<!-- Decorative ambient glow -->
+<div class="absolute inset-0 bg-primary/5 blur-[100px] -z-10 rounded-full"></div>
+</div>
+</div>
+<!-- Action Controls (Bento-style arrangement) -->
+<div class="flex flex-wrap gap-4 justify-center lg:justify-start w-full max-w-md">
+<!-- Increment (Hero Action) -->
+<button class="flex-1 min-w-[140px] bg-primary text-on-primary rounded-full py-5 px-6 flex items-center justify-center gap-2 shadow-[0_8px_24px_-6px_rgba(70,72,212,0.3)] hover:scale-[1.02] active:scale-95 transition-all duration-300">
+<span class="material-symbols-outlined text-[28px]">add</span>
+<span class="font-medium text-lg">Arttır</span>
+</button>
+<!-- Decrement (Secondary) -->
+<button class="flex-1 min-w-[140px] bg-surface-container-lowest text-on-surface rounded-full py-5 px-6 flex items-center justify-center gap-2 shadow-[0_4px_12px_-4px_rgba(17,28,45,0.05)] hover:bg-surface-container-low active:scale-95 transition-all duration-300">
+<span class="material-symbols-outlined text-[28px]">remove</span>
+<span class="font-medium text-lg">Azalt</span>
+</button>
+<!-- Reset (Tertiary/Destructive subtle) -->
+<button class="w-full sm:w-auto bg-surface-variant text-on-surface-variant rounded-full py-5 px-6 flex items-center justify-center gap-2 hover:bg-surface-container-highest active:scale-95 transition-all duration-300">
+<span class="material-symbols-outlined">restart_alt</span>
+<span class="font-medium">Sıfırla</span>
+</button>
+</div>
+</section>
+<!-- History Panel (Right Side Glassmorphism Card) -->
+<aside class="lg:col-span-5 w-full bg-surface-container-lowest rounded-[32px] p-8 shadow-[0_12px_40px_-12px_rgba(17,28,45,0.05)] relative overflow-hidden">
+<!-- Subtle Top Gradient -->
+<div class="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-surface-container-low/50 to-transparent pointer-events-none"></div>
+<header class="flex items-center justify-between mb-8 relative z-10">
+<h2 class="font-headline font-bold text-2xl text-on-surface">İşlem Geçmişi</h2>
+<span class="bg-secondary-container text-on-secondary-container text-xs font-bold px-3 py-1 rounded-full tnum">10 Son İşlem</span>
+</header>
+<!-- Scrollable History List (No Dividers, Tonal Spacing) -->
+<div class="space-y-4 max-h-[500px] overflow-y-auto pr-2 custom-scrollbar relative z-10">
+<!-- History Item 1 -->
+<div class="bg-surface p-4 rounded-2xl flex items-center justify-between group hover:bg-surface-container-high transition-colors">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-primary-fixed flex items-center justify-center text-on-primary-fixed">
+<span class="material-symbols-outlined text-[20px]">add</span>
+</div>
+<div>
+<p class="font-medium text-on-surface text-sm">Arttırıldı: 12 → 13</p>
+<p class="text-xs text-on-surface-variant mt-0.5 tnum">12.05.2024 • 14:30:15</p>
+</div>
+</div>
+</div>
+<!-- History Item 2 -->
+<div class="bg-surface p-4 rounded-2xl flex items-center justify-between group hover:bg-surface-container-high transition-colors">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-primary-fixed flex items-center justify-center text-on-primary-fixed">
+<span class="material-symbols-outlined text-[20px]">add</span>
+</div>
+<div>
+<p class="font-medium text-on-surface text-sm">Arttırıldı: 11 → 12</p>
+<p class="text-xs text-on-surface-variant mt-0.5 tnum">12.05.2024 • 14:28:42</p>
+</div>
+</div>
+</div>
+<!-- History Item 3 -->
+<div class="bg-surface p-4 rounded-2xl flex items-center justify-between group hover:bg-surface-container-high transition-colors">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-surface-variant flex items-center justify-center text-on-surface-variant">
+<span class="material-symbols-outlined text-[20px]">remove</span>
+</div>
+<div>
+<p class="font-medium text-on-surface text-sm">Azaltıldı: 12 → 11</p>
+<p class="text-xs text-on-surface-variant mt-0.5 tnum">12.05.2024 • 14:25:10</p>
+</div>
+</div>
+</div>
+<!-- History Item 4 -->
+<div class="bg-surface p-4 rounded-2xl flex items-center justify-between group hover:bg-surface-container-high transition-colors">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-primary-fixed flex items-center justify-center text-on-primary-fixed">
+<span class="material-symbols-outlined text-[20px]">add</span>
+</div>
+<div>
+<p class="font-medium text-on-surface text-sm">Arttırıldı: 11 → 12</p>
+<p class="text-xs text-on-surface-variant mt-0.5 tnum">12.05.2024 • 14:20:05</p>
+</div>
+</div>
+</div>
+<!-- History Item 5 -->
+<div class="bg-surface p-4 rounded-2xl flex items-center justify-between group hover:bg-surface-container-high transition-colors">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-error-container flex items-center justify-center text-on-error-container">
+<span class="material-symbols-outlined text-[20px]">restart_alt</span>
+</div>
+<div>
+<p class="font-medium text-on-surface text-sm">Sıfırlandı: 45 → 0</p>
+<p class="text-xs text-on-surface-variant mt-0.5 tnum">12.05.2024 • 10:15:00</p>
+</div>
+</div>
+</div>
+<!-- Simulating more history items without repeating full code visually -->
+<div class="h-20 flex items-center justify-center">
+<span class="text-sm text-outline-variant font-medium">Önceki işlemler yükleniyor...</span>
+</div>
+</div>
+</aside>
+</div>
+<!-- Bottom padding to account for mobile nav -->
+<div class="h-24 lg:hidden"></div>
+</main>
+<!-- BottomNavBar (Mobile) -->
+<nav class="fixed bottom-0 w-full rounded-t-3xl lg:hidden no-border shadow-[0_-4px_20px_rgba(0,0,0,0.05)] shadow-2xl z-50 flex justify-around items-center px-4 pt-3 pb-8 bg-white/90 backdrop-blur-lg">
+<a class="flex flex-col items-center justify-center bg-indigo-100 text-indigo-700 rounded-2xl px-6 py-2 active:scale-90 transition-transform duration-150" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">add_circle</span>
+<span class="font-['Inter'] text-[10px] font-medium mt-1">Counter</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-400 px-6 py-2 active:bg-slate-100 rounded-2xl active:scale-90 transition-transform duration-150" href="#">
+<span class="material-symbols-outlined">history</span>
+<span class="font-['Inter'] text-[10px] font-medium mt-1">History</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-400 px-6 py-2 active:bg-slate-100 rounded-2xl active:scale-90 transition-transform duration-150" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="font-['Inter'] text-[10px] font-medium mt-1">Settings</span>
+</a>
+</nav>
+<style>
+        /* Custom subtle scrollbar for history panel */
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background-color: theme('colors.outline-variant');
+            border-radius: 20px;
+        }
+    </style>
+</body></html>
